@@ -1,0 +1,227 @@
+  <aside class="notes">
+ It's tough to just click through or let it animate.
+ So I liked the idea of laying out all of the images at once.   
+ 
+ My first question that came up, does it always come back?
+ The second question, is does it always come back after 24 iterations?
+</aside>
+  
+  <style>
+
+        .layout-images {
+            margin-top: -300px;
+        }
+        
+        .image-controls {
+            padding-top:0;
+            margin-top:0;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="file"] {
+            margin: 10px;
+        }
+        
+        select {
+            padding: 5px;
+            margin: 5px;
+        }
+        
+      .iterations-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); 
+        gap: 8px;                            
+        width: 1200px;                    
+        margin-left: -120px;
+
+        }
+        
+        .iteration-item {
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .iteration-item canvas {
+            border: 1px solid #ccc;
+            image-rendering: pixelated;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .iteration-item h4 {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        
+        .loading {
+            color: #666;
+        }
+        
+        .complete {
+            color: #28a745;
+        }
+    </style>
+    <section class="layout-images">
+    <div class="image-controls">
+        <input type="file" id="imageInput" accept="image/*">
+        
+        <select id="sizeSelect" onchange="updateSize()">
+            <option value="14">14x14</option>
+            <option value="15">15x15</option>
+            <option value="16"selected>16x16</option>
+            <option value="161">161x161</option>
+        </select>
+        <button onclick="generateAllIterations()">Generate All Iterations</button>
+    </div>
+        
+    <div class="iterations-grid" id="iterationsGrid"></div>
+    </section>
+
+    <script>
+        let originalData = null;
+        let currentSize = 16;
+        
+        document.getElementById('imageInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    loadImageData(img);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+        
+        function loadImageData(img) {
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = currentSize;
+            tempCanvas.height = currentSize;
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            tempCtx.fillStyle = 'white';
+            tempCtx.fillRect(0, 0, currentSize, currentSize);
+            tempCtx.drawImage(img, 0, 0, currentSize, currentSize);
+            
+            originalData = tempCtx.getImageData(0, 0, currentSize, currentSize);
+        }
+        
+        function applyArnoldTransform(imageData) {
+            const width = imageData.width;
+            const height = imageData.height;
+            const data = imageData.data;
+            const newData = new Uint8ClampedArray(data.length);
+            
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const newX = (1 * x + y) % width;
+                    const newY = (x + 0*y) % height;
+                    
+                    const oldIndex = (y * width + x) * 4;
+                    const newIndex = (newY * width + newX) * 4;
+                    
+                    for (let i = 0; i < 4; i++) {
+                        newData[newIndex + i] = data[oldIndex + i];
+                    }
+                }
+            }
+            
+            return new ImageData(newData, width, height);
+        }
+        
+        function generateAllIterations() {
+            if (!originalData) {
+                alert('Please load an image first!');
+                return;
+            }
+
+            iterations = 31
+            
+            const grid = document.getElementById('iterationsGrid');
+            
+            let currentData = new ImageData(new Uint8ClampedArray(originalData.data), currentSize, currentSize);
+            
+            // Generate and display each iteration
+            for (let i = 0; i <= iterations; i++) {
+                setTimeout(() => {
+                    // Create iteration container
+                    const iterationDiv = document.createElement('div');
+                    iterationDiv.className = 'iteration-item';
+                    
+                    // Create title
+                    const title = document.createElement('h4');
+                    title.textContent = i === 0 ? 'Original' : `${i}`;
+                    iterationDiv.appendChild(title);
+                    
+                    // Create canvas
+                    const canvas = document.createElement('canvas');
+                    canvas.width = currentSize;
+                    canvas.height = currentSize;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Draw current state
+                    ctx.putImageData(currentData, 0, 0);
+                    iterationDiv.appendChild(canvas);
+                    
+                    // Add to grid
+                    grid.appendChild(iterationDiv);
+                    
+                    // Apply transform for next iteration (except on the last one)
+                    if (i < iterations) {
+                        currentData = applyArnoldTransform(currentData);
+                    }
+                    
+                }, i * 100); // Stagger generation by 100ms each
+            }
+        }
+        
+           function updateSize() {
+            currentSize = parseInt(document.getElementById('sizeSelect').value);
+            originalData = null;
+            clearGrid();
+            loadImage();
+        }
+
+          function clearGrid() {
+            document.getElementById('iterationsGrid').innerHTML = '';
+        }
+
+        
+        function loadImage() {
+            const img = new Image();
+            img.onload = function() {
+                loadImageData(img);
+            };
+
+            if (currentSize == 16) {
+                img.src = 'src/assets/16by16cat.png';
+            }
+            if (currentSize == 14) {
+                img.src = 'src/assets/14by14cat.png';
+            }
+            if (currentSize == 15) {
+                img.src = 'src/assets/15by15cat.png';
+            }
+    
+            if (currentSize == 161) {
+                img.src = 'src/assets/161pixelcat.png';
+            }
+    
+            console.log(currentSize)
+        }
+        
+        loadImage();
+    </script>

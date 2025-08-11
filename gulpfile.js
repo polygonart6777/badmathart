@@ -19,10 +19,12 @@ const eslint = require('gulp-eslint')
 const minify = require('gulp-clean-css')
 const connect = require('gulp-connect')
 const autoprefixer = require('gulp-autoprefixer')
+const fileInclude = require('gulp-file-include');
 
 const root = yargs.argv.root || '.'
 const port = yargs.argv.port || 8000
 const host = yargs.argv.host || 'localhost'
+
 
 const cssLicense = `
 reveal.js ${pkg.version}
@@ -163,6 +165,27 @@ gulp.task('plugins', () => {
     } ));
 })
 
+gulp.task('generate-slides-index', (done) => {
+  const slideFiles = fs.readdirSync('./src/slides')
+    .filter(f => f.endsWith('.html'))
+    .map(f => `<section>@@include('./slides/${f}')</section>`)
+    .join('\n');
+
+  fs.writeFileSync('./src/slides.html', slideFiles);
+  done();
+});
+
+gulp.task('build-html', () => {
+  console.log('🔧 Rebuilding index.html...');
+  return gulp.src('src/index.html')
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'))
+    .pipe(connect.reload());
+});
+
 // a custom pipeable step to transform Sass to CSS
 function compileSass() {
   return through.obj( ( vinylFile, encoding, callback ) => {
@@ -271,9 +294,7 @@ gulp.task('eslint', () => gulp.src(['./js/**', 'gulpfile.js'])
 
 gulp.task('test', gulp.series( 'eslint', 'qunit' ))
 
-gulp.task('default', gulp.series(gulp.parallel('js', 'css', 'plugins'), 'test'))
-
-gulp.task('build', gulp.parallel('js', 'css', 'plugins'))
+gulp.task('build', gulp.parallel('js', 'css', 'plugins', 'generate-slides-index','build-html'))
 
 gulp.task('package', gulp.series(async () => {
 
@@ -296,6 +317,8 @@ gulp.task('package', gulp.series(async () => {
 gulp.task('reload', () => gulp.src(['index.html'])
     .pipe(connect.reload()));
 
+gulp.task('blah',()=>console.log('blah'))
+
 gulp.task('serve', () => {
 
     connect.server({
@@ -305,7 +328,10 @@ gulp.task('serve', () => {
         livereload: true
     })
 
+
+
     const slidesRoot = root.endsWith('/') ? root : root + '/'
+
     gulp.watch([
         slidesRoot + '**/*.html',
         slidesRoot + '**/*.md',
@@ -325,7 +351,10 @@ gulp.task('serve', () => {
         'css/*.scss',
         'css/print/*.{sass,scss,css}'
     ], gulp.series('css-core', 'reload'))
+    gulp.watch(['src/slides/**/*.html'], gulp.series('generate-slides-index', 'build-html', 'reload'))
 
     gulp.watch(['test/*.html'], gulp.series('test'))
-
 })
+
+gulp.task('default', gulp.series(gulp.parallel('js', 'css', 'plugins', 'generate-slides-index', 'build-html','serve'), 'test'))
+

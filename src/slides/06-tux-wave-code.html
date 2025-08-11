@@ -1,0 +1,159 @@
+<aside class="notes">
+   Code is not great.  But it worked and that was a good starting point for me.
+   You can see that there were comments that didn't make sense.
+   I loaded the image straight into it.
+   I was too lazy to change colors so I changed them with code here.
+   There is copied code, where two functions essentially do the same thing but just use different images.
+</aside>
+<style>
+    .code {
+        display:flex;
+        width:100% !important;
+        align-items:center;
+        justify-content: center;
+    }
+</style>
+
+<h2>My code :/</h2>
+<div class="code">
+    <pre>
+        <code data-trim data-noescape>
+            #include &ltFastLED.h&gt
+
+            #define LED_PIN     4
+            #define WIDTH       16
+            #define HEIGHT      16
+            #define NUM_LEDS    (WIDTH * HEIGHT)
+
+            CRGB leds[NUM_LEDS];
+
+            const uint32_t tux_data[1][256] PROGMEM= {
+            {
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xffffffff, 0xff000000, 0xff000000, 0xffffffff, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff001c2a, 0xff00bdff, 0xff00bdff, 0xff000000, 0x00000000, 
+            0x00000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0x00000000, 
+            0x00000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0x00000000, 
+            0x00000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0x00000000
+            }
+            };
+
+            static const uint32_t tux_data_wave[1][256] PROGMEM = {
+            {
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xffffffff, 0xff000000, 0xff000000, 0xffffffff, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 
+            0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 
+            0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 
+            0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff
+            }
+            };
+
+            void setup() {
+            }
+
+            void original() {
+                uint32_t tux_data_temp[256];
+
+                for (int i = 0; i &lt NUM_LEDS; i++) {
+                tux_data_temp[i] = pgm_read_dword_near(&tux_data[0][i]);
+            }
+
+            for (int y = 0; y &lt HEIGHT; y++) {
+                for (int x = 0; x &lt WIDTH; x++) {
+                int xi = (y % 2 == 0) ? x : (WIDTH - 1 - x);  // Serpentine pattern (zigzag)
+                int pixelIndex = y * WIDTH + xi;  // Map 2D to 1D index
+
+                uint32_t color = tux_data_temp[y * WIDTH + x];  // Get the color from the array
+                if (color == 0x00000000) {
+                    color = 0x3e7f9e00;  // Dark gray instead of black
+                }
+
+                if (color == 0xff000000) {
+                    color = 0x10101000;  // Dark gray instead of black
+                }
+
+
+                uint8_t r = (color >> 16) & 0xFF; 
+                uint8_t g = (color >> 8) & 0xFF;   
+                uint8_t b = color & 0xFF;  
+                
+                // Adjust color order (GRB to RGB if needed)
+                leds[pixelIndex] = CRGB(r, g, b);
+                }
+            }
+
+            }
+
+            void wave() {
+                uint32_t tux_data_wave_temp[256];
+
+            for (int i = 0; i &lt NUM_LEDS; i++) {
+                tux_data_wave_temp[i] = pgm_read_dword_near(&tux_data_wave[0][i]);
+            }
+                for (int y = 0; y &lt HEIGHT; y++) {
+                for (int x = 0; x &lt WIDTH; x++) {
+                int xi = (y % 2 == 0) ? x : (WIDTH - 1 - x);  // Serpentine pattern (zigzag)
+                int pixelIndex = y * WIDTH + xi;  // Map 2D to 1D index
+
+                uint32_t color = tux_data_wave_temp[y * WIDTH + x]; 
+                if (color == 0x00000000) {
+                    color = 0x3e7f9e00;  // Dark gray instead of black
+                }
+
+                if (color == 0xff000000) {
+                    color = 0x10101000;  // Dark gray instead of black
+                }
+
+
+                uint8_t r = (color >> 16) & 0xFF;  // Extract red channel
+                uint8_t g = (color >> 8) & 0xFF;   // Extract green channel
+                uint8_t b = color & 0xFF;  
+                
+                // Adjust color order (GRB to RGB if needed)
+                leds[pixelIndex] = CRGB(r, g, b);
+                }
+            }
+
+            }
+
+            void loop() {
+
+
+            FastLED.addLeds&ltWS2812B, LED_PIN, GBR>(leds, NUM_LEDS);
+            FastLED.setBrightness(20);
+
+            FastLED.clear();
+            original();
+
+            FastLED.show();
+            delay(600);
+            FastLED.clear();
+            wave();
+            FastLED.show();
+            delay(600);
+
+            }
+        </code>
+    </pre>
+</div> 

@@ -1,0 +1,78 @@
+.content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+}
+
+.bullet-points {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.bullet-points ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bullet-points li {
+  margin-bottom: 20px;
+  font-size: 1.75rem;
+  color: #34495e;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 30px;
+}
+
+.bullet-points li::before {
+  content: "●";
+  color: headingColor;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.beamer-style-box {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ecdadd;
+  box-shadow: 5px 5px 5px grey;
+  border: solid thin;
+  font-size: 20px;
+  text-align: start;
+
+  .title {
+    font-size: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: maroon;
+    color: white;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+.beamer-box-content {
+    padding: 1rem;
+  }

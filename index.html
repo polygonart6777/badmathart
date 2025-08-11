@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +17,2078 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+  					<section><h1> Five Reasons to Create ''bad" mathart </h1>
+<h4> Illustrating Mathematics Reunion - ICERM 2025</h4>
+
+<aside class="notes">
+    -------------TO DO-------------
+    A lot of artists I've talked to have objections to this.   
+    I wanted to use 'silly' or 'ugly' but none of these words encompassed what I was trying to do. 
+    I wanted a word that doesn't place emphasis on the outcome but the process instead. 
+
+    Connection, convenience, creativity.
+    Call to create, call to make things.
+</aside></section>
+<section><h2>A little about me</h2>
+
+<style>
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 225px);
+    gap: 15px;
+    max-width: 1200px;
+  }
+
+  .image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .image-item:hover {
+    transform: scale(1.02);
+  }
+
+  .image-item img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+  }
+
+  .image-item:first-child {
+    grid-column: 1 / 3;
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .image-item:hover .image-overlay {
+    transform: translateY(0);
+  }
+
+  .image-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .image-description {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+</style>
+
+<div class="image-grid">
+  <div class="image-item">
+    <!-- teresa and I building one of George Hart's sculptures, or me with all my origami?-->
+    <img src="/src/assets/torus.jpg" alt="Featured Image" />
+    <div class="image-overlay">
+      <div class="image-title">Math and Art class</div>
+      <div class="image-description">Western Washington University</div>
+    </div>
+  </div>
+
+  <div class="image-item">
+    <!--A picture of one of my slides?-->
+    <img src="/src/assets/thesis.png" alt="Image 2" />
+    <div class="image-overlay">
+      <div class="image-title">PhD Thesis</div>
+      <div class="image-description">Chaotic Dynamical Systems</div>
+    </div>
+  </div>
+
+  <div class="image-item">
+    <!--The solenoid-->
+    <img src="/src/assets/solenoid.jpg"" alt="Image 3">
+    <div class="image-overlay">
+      <div class="image-title">ICERM 2019</div>
+      <div class="image-description">
+        Presented my work in progress and solenoid
+      </div>
+    </div>
+  </div>
+
+  <div class="image-item">
+    <!--Rauzy tilings-->
+    <img src="/src/assets/tech-industry.png" alt="Image 4" />
+    <div class="image-overlay">
+      <div class="image-title">Tech Industry</div>
+      <div class="image-description">
+        Working with various languages from software to firmware
+      </div>
+    </div>
+  </div>
+
+  <div class="image-item">
+    <!--3d printing and lasercutting?-->
+    <img src="/src/assets/makerspace.png" alt="Image 5" />
+    <div class="image-overlay">
+      <div class="image-title">Makerspace</div>
+      <div class="image-description">
+        Continuing to find avenues for working with folks and communicating
+        mathematical ideas
+      </div>
+    </div>
+  </div>
+</div>
+
+<aside class="notes">
+  In 2015 a colleague and I created a math and art class at Western
+  Washington University. The course was created as an alternative to the typical
+  lecture classroom. Each day, students would recieve about 5 to 15 minutes
+  worth of instruction and the rest of the time would be spent on exploration.
+. The topics for the course included origami, non-euclidean geometry,
+  polyhedra, tilings, perspective and so much more.
+  
+  After creating the course, I pursed my PhD. My topic of choice was in
+   quasicrystals and aperiodic tilings. I felt very lucky to be
+  studying something where there were so many discoveries being made each year.
+
+
+  During my PhD, and largely because of the inspiration of this program, I pursued 
+  a career in the tech industry, to learn about the possibilities for math communication,
+  in alternative spaces. 
+  
+  In developing the course and throughout my time as a
+  PhD student, I did a lot of 3d printing, laser cutting, animations with
+  Mathematica. Getting access to these tools was actually fairly involved and
+  not so easy at the time. It was the community of makers that I was after,
+  someone to chat about 3d printer options with, or help with laser cutting
+  specs, free tools for designs. 
+  
+  
+  More recently, I've been getting involved with
+  my local Makerspace where I'm a volunteer. I've been focusing on 3d printing, 
+  lasercutting and electronics.
+</aside>
+</section>
+<section>
+<aside class="notes">
+  In 2019, I presented my thesis work here at ICERM.
+  
+  My work dealt with modelling
+  complex systems called Hyperbolic Toral Automorphisms which I will define soon.
+  The matrix here is used to define one of those Hyperbolic Toral Automorphisms,
+
+  The interesting part for me was that tiling spaces could be used to model Hyperbolic Toral Automorphisms.
+  
+  This tiling is called the Rauzy tiling.  
+
+  A lot of people like to model the Penrose tilings, or now the famous monotilings, but Back
+  in 2019 I loved making things out of the Rauzy tilings.  I made necklaces, coasters, puzzles etc. 
+  I was ready to get it tatooed.  You name it.
+
+</aside>
+
+<style>
+  .image-grid {
+    display: grid;
+    gap: 15px;
+  }
+
+  .bottom-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1, 225px);
+  }
+
+  .top-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(1, 225px);
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .image-container:hover {
+    transform: scale(1.02);
+  }
+
+  .image-overlay-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover .image-overlay {
+    transform: translateY(0);
+  }
+
+  .image-title-2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .image-description-2 {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .image-item-2:last-child {
+    grid-column: 1;
+  }
+
+  .map {
+    font-size:20px;
+  }
+</style>
+
+<h2>Rauzy fractal</h2>
+
+<div class="map">Take $A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$, the Tribonacci Matrix </div>
+
+
+<div class="image-grid top-row">
+  <div class="image-container">
+    <img src="/src/assets/rauzysub1.png" alt="Image 3" />
+    <div class="image-overlay-2">
+      <div class="image-title-2">Substitution 1</div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <img src="/src/assets/rauzysub2.png" alt="Image 3" />
+    <div class="image-overlay-2">
+      <div class="image-title-2">Substitution 2</div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <img src="/src/assets/rauzysub3.png" alt="Image 3" />
+    <div class="image-overlay-2">
+      <div class="image-title-2">Substitution 3</div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+</div>
+
+<div class="image-grid bottom-row">
+  <div class="image-container">
+    <!-- teresa and I building one of George Hart's sculptures, or me with all my origami?-->
+    <img src="/src/assets/rauzy-projection.jpg" alt="rauzy-projection" />
+    <div class="image-overlay-2">
+      <div class="image-title-2"></div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <!--A picture of one of my slides?-->
+    <img src="/src/assets/rauzytiling.png" alt="rauzy-tiling" />
+    <div class="image-overlay-2">
+      <div class="image-title-2"></div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+</div>
+</section>
+<section><h3> Motivation </h3>
+
+<!-- Sketch of rauzy led wall here -->
+<!-- illustrate getting too overwhelmed with materials, concepts, and illustration-->
+
+
+<aside class="notes">
+
+    For a recent project, what I wanted to do was create the Rauzy tiled but depicted in leds.
+    I had this elaborate plan to showcase it at a local tech conference I was helping organize in my hometown.
+    I was really inspired by a lot of folks from the conference who hat led hats or backbacks.
+
+
+    So I thought, a led screen as a start. I chose a 16 by 16 led. 
+    Instead of building up the tiling like in the previous images, 
+    I wanted to start with a full tiling and then decompose the tiles.
+    Issues I ran into
+    * Working with 16 by 16 pixels is very constraining.  
+     Fractals like a lot of room, they do not do well being constrained.
+    * Lots of technology to work with, arduino, code, led connections, power, case for led, 3d printed, connect leds together.
+    * Animation had to be illustrative, could not just be flashing the different steps.
+    Became overwhelmed.
+    Too many factors.
+    I'm supposed to be doing this for fun, learning and sharing math ideas
+    and instead this is causing anxiety, turmoil.
+    I started to avoid working on it and went into some sort of freeze response.
+
+    This was not a good way to live. 
+    I really enjoy working on mathart and want to keep doing more of it.
+    What would help me get back into iterations?
+    For me what helps, is letting go of expectations and not taking myself so seriously.
+
+
+    I decided, you know what, I'm going to create some bad mathart,
+    but it has to be something that will make me smile.
+
+    
+    Elements
+    * I kept the arduino
+    * Kept the idea of flashing movement but scaled it down to just two moves.
+    * Used the mascot for linux which is the tux penguin.
+</aside></section>
+<section><style>
+    .materials-content {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-between;
+        padding-top:2rem;
+    }
+
+    .materials-image-container {
+        flex: 1;
+        text-align: center;
+    }
+
+    .materials-image-placeholder {
+        width: 100%;
+        max-width: 500px;
+        height: 350px;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+    }
+
+    .materials-bullet-points {
+        flex: 1;
+        padding-left: 20px;
+    }
+
+
+    .materials-bullet-points ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .materials-bullet-points li {
+        margin-bottom: 20px;
+        font-size: 1.75rem;
+        color: #34495e;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 30px;
+    }
+
+
+    .materials-bullet-points li::before {
+        content: "●";
+        color: headingColor;
+        font-size: 1.5rem;
+        position: absolute;
+        left: 0;
+        top: -2px;
+    }
+
+
+</style>
+
+<h2>Materials - Addressible Leds</h2>
+
+<div class="materials-content">
+    <div class="materials-image-container">
+        <img src="/src/assets/leds.jpg" alt="16-by-16-led">
+    </div>
+    
+    <div class="materials-bullet-points">
+        <ul>
+            <li>Microchip built into each led</li>
+            <li>Specify RGB color to each led independently<li>
+            <li>Can be chained together</li>
+            <li>Fairly inexpensive $16.99</li>
+        </ul>
+    </div>
+</div>
+
+<aside class="notes">
+    (2 min)
+    Addressible leds - 
+    * Has its own driver chip
+    * Microchip built into each led
+    * Listens to data sent from a controller
+    * Passes data to the next led
+    * Snakes though
+    * Allows you to add particular RGB colors to each led individually.
+    * Lets you chain leds together to create larger systems.
+
+    
+    AI tools such as ChatGPT and Claude
+
+</aside></section>
+<section>
+<h2>Materials - Esp32/Arduino</h2>
+
+<div class="materials-content">
+    <div class="materials-image-container">
+        <img src="/src/assets/esp32arduino.jpg" alt="Adruino">
+    </div>
+    
+    <div class="materials-bullet-points">
+        <ul>
+            <li>Microcontroller, open-source programmable to control electronics</li>
+            <li>Inexpensive ~$5<li>
+            <li>Bluetooth and Wifi connection</li>
+            <li>Available access to Arduino IDE and all of its libraries</li>
+        </ul>
+    </div>
+</div>
+
+<aside class="notes">
+    (2 min)
+    Arduino and ESP32 - 
+    Arduino is an open-source electronics platform based on easy-to-use hardware and software.
+    An arduino board is a microcontroller that is programmable to control electronics such as leds, motors, sensors etc.
+    An esp32 is a microcontroller similar to an arduino but it also has bluetooth and wifi capabilities.  It's also a lot cheaper.  
+    An arduino UNO costs about $20 while an ESP32 costs about $5. 
+
+    3d printer for the case - 
+    * I used someone else's code
+    * Bambu Lab A1, very easy to use
+    * Filament is PETG-HF, PETG and is a little bit nicer to use than pla
+
+    Arduino ide
+    * C like 
+    * Lots of libraries available include FASTLED
+    * What else is interesting about the IDE?
+    
+    AI tools such as ChatGPT and Claude
+
+    Images
+    * Show code this is important in showing 'bad' mathart since a lot of people are scared to show their code.  
+    But if you know you're creating bad mathart than you show off your messy code proudly.
+    * Show addressible led
+    * Show esp32 and arduino
+    * Show bambu a1
+</aside></section>
+<section><h2> Reason 1: Start </h2>
+
+"Whenever you are stuck searching for the optimal plan, remember: Getting started changes everything"
+-James Clear
+
+<aside class="notes">
+    (2 min)
+   If I set out to make something that from the get go I know will be bad, it gives me a little bit of space to start.
+   Finger painting analogy.
+   Vulnerability in knowing that this is going to be bad but trying anyway.  
+   The reason to try, is for the process of creative expression and communication.
+   For me that is the most important aspect.  
+   Being able to share mathematical ideas in various forms and to learn from those creative collaborations. 
+   
+   In this talk, I'm hoping to illustrate this process through an example.  
+   How the pursuit of creating mathart and communicating mathematical ideas can be beneficial in whatever forms they make take.
+   The answer for me lies in the pursuit.
+</aside></section>
+<section><h2> Tux Wave </h2>
+
+<video
+  data-autoplay
+  loop
+  width="350"
+  src="/src/assets/tux-wave.mp4"
+></video>
+
+<aside class="notes">
+    I decided that if I was going to keep creating, I had to make something silly that made me smile.
+
+    Tux wave was first created with an arduino microcontroller and then an esp32.  
+    There are 16 by 16 leds.  The drawing was done in a program called piskel which generates c output for me.
+    The c output can be used in the arduino ide to code animations with it.
+    I decided to only use two moves to keep this as simple as possible.
+    The case was 3d printed, the designs were used off of youtube. 
+
+    People seemed to really connect with it. That motivated me to keep going.
+</aside></section>
+<section><aside class="notes">
+   Code is not great.  But it worked and that was a good starting point for me.
+   You can see that there were comments that didn't make sense.
+   I loaded the image straight into it.
+   I was too lazy to change colors so I changed them with code here.
+   There is copied code, where two functions essentially do the same thing but just use different images.
+</aside>
+<style>
+    .code {
+        display:flex;
+        width:100% !important;
+        align-items:center;
+        justify-content: center;
+    }
+</style>
+
+<h2>My code :/</h2>
+<div class="code">
+    <pre>
+        <code data-trim data-noescape>
+            #include &ltFastLED.h&gt
+
+            #define LED_PIN     4
+            #define WIDTH       16
+            #define HEIGHT      16
+            #define NUM_LEDS    (WIDTH * HEIGHT)
+
+            CRGB leds[NUM_LEDS];
+
+            const uint32_t tux_data[1][256] PROGMEM= {
+            {
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xffffffff, 0xff000000, 0xff000000, 0xffffffff, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff001c2a, 0xff00bdff, 0xff00bdff, 0xff000000, 0x00000000, 
+            0x00000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0x00000000, 
+            0x00000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0x00000000, 
+            0x00000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0x00000000
+            }
+            };
+
+            static const uint32_t tux_data_wave[1][256] PROGMEM = {
+            {
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xffffffff, 0xff000000, 0xff000000, 0xffffffff, 0xff000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff2695ff, 0xff000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xff2695ff, 0xff2695ff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 
+            0x00000000, 0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0x00000000, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0x00000000, 
+            0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 
+            0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 
+            0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 
+            0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff000000, 0xff000000, 0xff000000, 0xffffffff, 0xffffffff, 0xff000000, 0xff000000, 0xff000000, 0xff00bdff, 0xff00bdff, 0xff00bdff, 0xff00bdff
+            }
+            };
+
+            void setup() {
+            }
+
+            void original() {
+                uint32_t tux_data_temp[256];
+
+                for (int i = 0; i &lt NUM_LEDS; i++) {
+                tux_data_temp[i] = pgm_read_dword_near(&tux_data[0][i]);
+            }
+
+            for (int y = 0; y &lt HEIGHT; y++) {
+                for (int x = 0; x &lt WIDTH; x++) {
+                int xi = (y % 2 == 0) ? x : (WIDTH - 1 - x);  // Serpentine pattern (zigzag)
+                int pixelIndex = y * WIDTH + xi;  // Map 2D to 1D index
+
+                uint32_t color = tux_data_temp[y * WIDTH + x];  // Get the color from the array
+                if (color == 0x00000000) {
+                    color = 0x3e7f9e00;  // Dark gray instead of black
+                }
+
+                if (color == 0xff000000) {
+                    color = 0x10101000;  // Dark gray instead of black
+                }
+
+
+                uint8_t r = (color >> 16) & 0xFF; 
+                uint8_t g = (color >> 8) & 0xFF;   
+                uint8_t b = color & 0xFF;  
+                
+                // Adjust color order (GRB to RGB if needed)
+                leds[pixelIndex] = CRGB(r, g, b);
+                }
+            }
+
+            }
+
+            void wave() {
+                uint32_t tux_data_wave_temp[256];
+
+            for (int i = 0; i &lt NUM_LEDS; i++) {
+                tux_data_wave_temp[i] = pgm_read_dword_near(&tux_data_wave[0][i]);
+            }
+                for (int y = 0; y &lt HEIGHT; y++) {
+                for (int x = 0; x &lt WIDTH; x++) {
+                int xi = (y % 2 == 0) ? x : (WIDTH - 1 - x);  // Serpentine pattern (zigzag)
+                int pixelIndex = y * WIDTH + xi;  // Map 2D to 1D index
+
+                uint32_t color = tux_data_wave_temp[y * WIDTH + x]; 
+                if (color == 0x00000000) {
+                    color = 0x3e7f9e00;  // Dark gray instead of black
+                }
+
+                if (color == 0xff000000) {
+                    color = 0x10101000;  // Dark gray instead of black
+                }
+
+
+                uint8_t r = (color >> 16) & 0xFF;  // Extract red channel
+                uint8_t g = (color >> 8) & 0xFF;   // Extract green channel
+                uint8_t b = color & 0xFF;  
+                
+                // Adjust color order (GRB to RGB if needed)
+                leds[pixelIndex] = CRGB(r, g, b);
+                }
+            }
+
+            }
+
+            void loop() {
+
+
+            FastLED.addLeds&ltWS2812B, LED_PIN, GBR>(leds, NUM_LEDS);
+            FastLED.setBrightness(20);
+
+            FastLED.clear();
+            original();
+
+            FastLED.show();
+            delay(600);
+            FastLED.clear();
+            wave();
+            FastLED.show();
+            delay(600);
+
+            }
+        </code>
+    </pre>
+</div> </section>
+<section><h2>Reason 2: Freedom to...</h2>
+
+<div class="graph">
+  <img
+    width="1500px"
+    src="/src/assets/wordCloud.png"
+    alt="freedom-word-clouds"
+  />
+</div>
+
+<aside class="notes">
+  Freedom to have bad code 
+  Freedom to be flexible and change course at any time, instead of using arduino, I decideded to use an esp32.
+  Choose different materials. 
+  Choose materials that are not of high quality. 
+  Freedom to be messy.
+  it's okay if it looks bad, or breaks, or doesn't use best practices. 
+  Freedom to not know. 
+  useless, boring, falls
+  "I've never been the center of attention, you're the center of mine,
+  and that's a very different feeling" 
+
+  Most important aspect is to make stuff, share your thoughts and work on
+  communicating your ideas.
+</aside>
+</section>
+<section><h2>Hyperbolic Toral Automorphisms</h2>
+Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$
+
+<br />
+$\lambda_1 = \frac{1+\sqrt{5}}{2}$ and $\lambda_2 = \frac{1-\sqrt{5}}{2}$
+
+\[\text{Define } f_A : \mathbb{T}^2 \to \mathbb{T}^2 \, \text{ as } \, f_A([x])
+= [Ax]\] Where $[x]$ is the equivalence class in $\mathbb{T}^2 =
+\mathbb{R^2/Z^2}$.
+<br/>
+
+<aside class="notes">
+  (2 min) 
+  Wanted to keep the leds, and microcontroller aspect of it. 
+  But wanted to add a bit of math.
+  I promised you a definition of Hyperbolic Toral Automorphisms.
+  My thesis dealt with Hyperbolic Toral Automorphisms, and thought it would be cool to use them within this piece.
+  Note that the matrix entries are integers.
+  One of the eigenvalues is greater than 1 while the other is less than one. 
+  Stretches in one direction while it compresses in another.
+</aside>
+</section>
+<section><h2>Discrete HTA </h2>
+Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$
+
+<br />
+<br />
+Let N be a natural number. Define 
+\[ g_A : \mathbb{Z}_N \to \mathbb{Z}_N \, \text{ as } \, g_A({[x]}_N)
+= {[Ax}]_N \] 
+
+Where $[x]$ is the equivalence class in $\mathbb{Z}_N$ and $x$ is in $\mathbb{Z}^2$.
+
+<aside class="notes">
+    Since I was going to be working by a 16 by 16 set of leds,
+    I thought, "Why not look into what happens for the Arnold Cat Map for the discrete case instead"
+</aside></section>
+<section><aside class="notes">
+    (2 min)
+    We will take an N by N image, in this case 10 by 10.
+    Apply the linear matrix to it.  The matrix has an eigenvalue less than 1 and another that greater than 1 in absolute value.
+    So it stretches in the direction of one eigenvector and compresses in the direction of the other.
+    Applying the modulus puts everything back into the starting square.
+
+</aside>
+
+<head>
+    <title>Arnold Cat Map - Discrete 10×10 Grid</title>
+    <style>
+
+  
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+        }
+        .canvas-wrapper {
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        canvas {
+            border: 2px solid #333;
+            border-radius: 5px;
+            background: white;
+            max-width:280px;
+            max-height:280px;
+        }
+        .hta-controls {
+            text-align: center;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+        .iteration-counter {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .hta-matrix {
+            font-size: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<h3>Discrete Arnold Cat Map</h3>
+<p class="hta-matrix">Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$</p>
+
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <div class="iteration-counter">Iteration: <span id="iterationCount">0</span></div>
+                <canvas id="beforeCanvas" width="280" height="280"></canvas>
+            </div>
+            <div class="fragment canvas-wrapper" >
+                <div class="iteration-counter">Linear Map </div>
+
+                <canvas id="linearCanvas" width="280" height="280"></canvas>
+            </div>
+            <div class="fragment canvas-wrapper">
+                <div class="iteration-counter">Discrete Cat Map </div>
+                <canvas id="finalCanvas" width="280" height="280"></canvas>
+            </div>
+        </div>
+
+          <div class="hta-controls">
+            <button onclick="applyTransform()">Apply Transform</button>
+            <button onclick="resetTransform()">Reset</button>
+        </div>
+        
+     
+    <script>
+        const beforeCanvas = document.getElementById('beforeCanvas');
+        const linearCanvas = document.getElementById('linearCanvas');
+        const finalCanvas = document.getElementById('finalCanvas');
+        const beforeCtx = beforeCanvas.getContext('2d');
+        const linearCtx = linearCanvas.getContext('2d');
+        const finalCtx = finalCanvas.getContext('2d');
+        
+        const gridSize = 10;
+        let originalPoints = [];
+        let currentPoints = [];
+        let iteration = 0
+        
+        // For linear canvas, show extended range
+        const linearMin = -5;
+        const linearMax = 20;
+        const linearRange = linearMax - linearMin;
+        
+        // Generate distinct colors for each grid point
+            function generateColors() {
+            const colors = [];
+            
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    // Create a smooth spectrum across the grid
+                    // Use position to determine hue and saturation
+                    
+                    const baseHue = 510 + (j * 50) / gridSize + (j * 105) / gridSize;
+                    const hue = baseHue % 360;
+
+                    saturation = 60
+                    
+                    // Lightness varies from top to bottom (40% to 70%)
+                    const lightness = 50
+                    
+                    colors.push(`hsl(${hue % 360}, ${saturation}%, ${lightness}%)`);
+                }
+            }
+            
+            return colors;
+        }
+        
+        // Initialize grid points (discrete coordinates 0-9)
+        function initializeGrid() {
+            originalPoints = [];
+            currentPoints = [];
+            
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    originalPoints.push({x: i, y: j, originalIndex: i * gridSize + j});
+                    currentPoints.push({x: i, y: j, originalIndex: i * gridSize + j});
+                }
+            }
+        }
+        
+        // Linear transformation (before modulus)
+        function linearTransform(x, y) {
+            const newX =  x + y;
+            const newY = x + 0*y;
+            return [newX, newY];
+        }
+        
+        // Discrete Arnold Cat Map (mod 10)
+        function discreteArnoldCatMap(x, y) {
+            const [linearX, linearY] = linearTransform(x, y);
+            const newX = ((linearX % gridSize) + gridSize) % gridSize; 
+            const newY = ((linearY % gridSize) + gridSize) % gridSize;
+            return [newX, newY];
+        }
+        
+        // Convert coordinates to canvas position
+        function gridToCanvas(x, y, canvas, isLinear = false) {
+            if (isLinear) {
+                // For linear canvas, show extended range
+                const canvasX = ((x - linearMin) / linearRange) * canvas.width;
+                const canvasY = canvas.height - ((y - linearMin) / linearRange) * canvas.height;
+                return [canvasX, canvasY];
+            } else {
+                // For discrete grid, use cell centers
+                const cellSize = canvas.width / gridSize;
+                const canvasX = (x + 0.5) * cellSize;
+                const canvasY = canvas.height - (y + 0.5) * cellSize;
+                return [canvasX, canvasY];
+            }
+        }
+        
+        // Draw grid lines
+        function drawGrid(ctx, canvas, isLinear = false) {
+            ctx.strokeStyle = '#ddd';
+            ctx.lineWidth = 1;
+            
+            if (isLinear) {
+                // Draw grid lines for extended range
+                for (let i = Math.ceil(linearMin); i <= Math.floor(linearMax); i += 5) {
+                    const [x, _] = gridToCanvas(i, 0, canvas, true);
+                    if (x >= 0 && x <= canvas.width) {
+                        ctx.beginPath();
+                        ctx.moveTo(x, 0);
+                        ctx.lineTo(x, canvas.height);
+                        ctx.stroke();
+                    }
+                }
+                
+                for (let j = Math.ceil(linearMin); j <= Math.floor(linearMax); j += 5) {
+                    const [_, y] = gridToCanvas(0, j, canvas, true);
+                    if (y >= 0 && y <= canvas.height) {
+                        ctx.beginPath();
+                        ctx.moveTo(0, y);
+                        ctx.lineTo(canvas.width, y);
+                        ctx.stroke();
+                    }
+                }
+                
+                // Highlight the 10×10 region
+                ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
+                const [x0, y1] = gridToCanvas(0, 0, canvas, true);
+                const [x1, y0] = gridToCanvas(gridSize, gridSize, canvas, true);
+                if (x0 >= 0 && x1 <= canvas.width && y0 >= 0 && y1 <= canvas.height) {
+                    ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
+                }
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x0, y0, x1 - x0, y1 - y0);
+            } else {
+                // Draw 10×10 grid
+                const cellSize = canvas.width / gridSize;
+                
+                for (let i = 0; i <= gridSize; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(i * cellSize, 0);
+                    ctx.lineTo(i * cellSize, canvas.height);
+                    ctx.stroke();
+                }
+                
+                for (let j = 0; j <= gridSize; j++) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, j * cellSize);
+                    ctx.lineTo(canvas.width, j * cellSize);
+                    ctx.stroke();
+                }
+                
+                // Highlight grid area
+                ctx.fillStyle = 'rgba(0, 150, 0, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+        
+        // Draw colored squares
+        function drawPoints(ctx, canvas, points, showLinear = false) {
+            const colors = generateColors();
+            
+            if (showLinear) {
+                // For linear transformation, draw as colored squares at transformed positions
+                for (let i = 0; i < points.length; i++) {
+                    const point = points[i];
+                    let [x, y] = linearTransform(point.x, point.y);
+                    
+                    const [canvasX, canvasY] = gridToCanvas(x, y, canvas, true);
+                    
+                    // Only draw if point is visible
+                    if (canvasX >= -gridSize && canvasX <= canvas.width + gridSize && 
+                        canvasY >= -gridSize && canvasY <= canvas.height + gridSize) {
+                        
+                        const squareSize = 12; // Size of squares in linear view
+                        
+                        // Use the originalIndex to ensure consistent coloring
+                        ctx.fillStyle = colors[point.originalIndex];
+                        ctx.fillRect(canvasX - squareSize/2, canvasY - squareSize/2, squareSize, squareSize);
+                        
+                        // Add border for visibility
+                        ctx.strokeStyle = '#000';
+                        ctx.lineWidth = 1;
+                        ctx.strokeRect(canvasX - squareSize/2, canvasY - squareSize/2, squareSize, squareSize);
+                        
+                    }
+                }
+            } else {
+                // For discrete grids, draw as colored squares filling grid cells
+                const cellSize = canvas.width / gridSize;
+                
+                for (let i = 0; i < points.length; i++) {
+                    const point = points[i];
+                    const x = point.x;
+                    const y = point.y;
+                    
+                    // Calculate cell position
+                    const cellX = x * cellSize;
+                    const cellY = (gridSize - 1 - y) * cellSize; // Flip Y coordinate
+                    
+                    // Fill the entire cell with the color
+                    ctx.fillStyle = colors[point.originalIndex];
+                    ctx.fillRect(cellX, cellY, cellSize, cellSize);
+                    
+                    // Add black border around each cell
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(cellX, cellY, cellSize, cellSize);
+                }
+            }
+        }
+        
+        // Redraw all canvases
+        function redraw() {
+            // Clear canvases
+            beforeCtx.clearRect(0, 0, beforeCanvas.width, beforeCanvas.height);
+            linearCtx.clearRect(0, 0, linearCanvas.width, linearCanvas.height);
+            finalCtx.clearRect(0, 0, finalCanvas.width, finalCanvas.height);
+            
+            // Draw grids
+            drawGrid(beforeCtx, beforeCanvas, false);
+            drawGrid(linearCtx, linearCanvas, true);
+            drawGrid(finalCtx, finalCanvas, false);
+            
+            // Show the transformation sequence correctly:
+            drawPoints(beforeCtx, beforeCanvas, currentPoints, false);  // Current positions (before next transform)
+            drawPoints(linearCtx, linearCanvas, currentPoints, true);   // Linear transform of current positions (before mod)
+            
+            // Apply one step transformation to show what the final result will be
+            const nextPoints = [];
+            for (let i = 0; i < currentPoints.length; i++) {
+                const point = currentPoints[i];
+                const [newX, newY] = discreteArnoldCatMap(point.x, point.y);
+                nextPoints.push({x: newX, y: newY, originalIndex: point.originalIndex});
+            }
+            drawPoints(finalCtx, finalCanvas, nextPoints, false);       // Show result after mod (next state)
+        }
+        
+        function applyTransform() {
+            
+            // Apply discrete Arnold Cat Map to each point
+            for (let i = 0; i < currentPoints.length; i++) {
+                const point = currentPoints[i];
+                const [newX, newY] = discreteArnoldCatMap(point.x, point.y);
+                point.x = newX;
+                point.y = newY;
+            }
+            
+            iteration++;
+            document.getElementById('iterationCount').textContent = iteration;
+            redraw();
+        }
+        
+        function resetTransform() {
+            console.log('check')
+            // Reset points to original positions
+            for (let i = 0; i < currentPoints.length; i++) {
+                currentPoints[i].x = originalPoints[i].x;
+                currentPoints[i].y = originalPoints[i].y;
+            }
+            console.log('reset')
+            
+            iteration = 0;
+            document.getElementById('iterationCount').textContent = iteration;
+            redraw();
+        }
+        
+        
+        // Initialize
+        initializeGrid();
+        redraw();
+    </script>
+</section>
+<section><h2>Patterns within encrypted images</h2>
+
+<aside class="notes">
+  So this is what gave me the idea of using the cat map with my leds.
+  I could illustrate the process of image encryption with the map!
+  
+  A little bit about image encryption with Arnold Cat Map. 
+  
+  Benefits of using an HTA 
+  * Area preserving 
+  * Invertible, if you have a key you can get the image back
+  * Chaotic, in particular it has mixing properties 
+  
+  Some of the cons are 
+  * It only permutes the pixels 
+  * Once you the which map is being used it easy to decrypt 
+  
+  
+  **Bring out the pixel box to show** 
+  
+  **Click through unti it repeats.** 
+  ** Ask them to guess the image! **
+
+  **Turn on second 14 by 14 box**
+
+</aside>
+</section>
+<section><h2> Reason 3: Allow space for curiosity</h2>
+
+
+<aside class="notes">
+    Letting go of a lot of the judgments,
+    If you're creating bad mathart, you might as well be asking "stupid" questions too.
+    Let your curiousity see where it takes you.
+    What questions come up.
+</aside></section>
+<section>  <aside class="notes">
+ It's tough to just click through or let it animate.
+ So I liked the idea of laying out all of the images at once.   
+ 
+ My first question that came up, does it always come back?
+ The second question, is does it always come back after 24 iterations?
+</aside>
+  
+  <style>
+
+        .layout-images {
+            margin-top: -300px;
+        }
+        
+        .image-controls {
+            padding-top:0;
+            margin-top:0;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="file"] {
+            margin: 10px;
+        }
+        
+        select {
+            padding: 5px;
+            margin: 5px;
+        }
+        
+      .iterations-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); 
+        gap: 8px;                            
+        width: 1200px;                    
+        margin-left: -120px;
+
+        }
+        
+        .iteration-item {
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .iteration-item canvas {
+            border: 1px solid #ccc;
+            image-rendering: pixelated;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .iteration-item h4 {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        
+        .loading {
+            color: #666;
+        }
+        
+        .complete {
+            color: #28a745;
+        }
+    </style>
+    <section class="layout-images">
+    <div class="image-controls">
+        <input type="file" id="imageInput" accept="image/*">
+        
+        <select id="sizeSelect" onchange="updateSize()">
+            <option value="14">14x14</option>
+            <option value="15">15x15</option>
+            <option value="16"selected>16x16</option>
+            <option value="161">161x161</option>
+        </select>
+        <button onclick="generateAllIterations()">Generate All Iterations</button>
+    </div>
+        
+    <div class="iterations-grid" id="iterationsGrid"></div>
+    </section>
+
+    <script>
+        let originalData = null;
+        let currentSize = 16;
+        
+        document.getElementById('imageInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    loadImageData(img);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+        
+        function loadImageData(img) {
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = currentSize;
+            tempCanvas.height = currentSize;
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            tempCtx.fillStyle = 'white';
+            tempCtx.fillRect(0, 0, currentSize, currentSize);
+            tempCtx.drawImage(img, 0, 0, currentSize, currentSize);
+            
+            originalData = tempCtx.getImageData(0, 0, currentSize, currentSize);
+        }
+        
+        function applyArnoldTransform(imageData) {
+            const width = imageData.width;
+            const height = imageData.height;
+            const data = imageData.data;
+            const newData = new Uint8ClampedArray(data.length);
+            
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const newX = (1 * x + y) % width;
+                    const newY = (x + 0*y) % height;
+                    
+                    const oldIndex = (y * width + x) * 4;
+                    const newIndex = (newY * width + newX) * 4;
+                    
+                    for (let i = 0; i < 4; i++) {
+                        newData[newIndex + i] = data[oldIndex + i];
+                    }
+                }
+            }
+            
+            return new ImageData(newData, width, height);
+        }
+        
+        function generateAllIterations() {
+            if (!originalData) {
+                alert('Please load an image first!');
+                return;
+            }
+
+            iterations = 31
+            
+            const grid = document.getElementById('iterationsGrid');
+            
+            let currentData = new ImageData(new Uint8ClampedArray(originalData.data), currentSize, currentSize);
+            
+            // Generate and display each iteration
+            for (let i = 0; i <= iterations; i++) {
+                setTimeout(() => {
+                    // Create iteration container
+                    const iterationDiv = document.createElement('div');
+                    iterationDiv.className = 'iteration-item';
+                    
+                    // Create title
+                    const title = document.createElement('h4');
+                    title.textContent = i === 0 ? 'Original' : `${i}`;
+                    iterationDiv.appendChild(title);
+                    
+                    // Create canvas
+                    const canvas = document.createElement('canvas');
+                    canvas.width = currentSize;
+                    canvas.height = currentSize;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Draw current state
+                    ctx.putImageData(currentData, 0, 0);
+                    iterationDiv.appendChild(canvas);
+                    
+                    // Add to grid
+                    grid.appendChild(iterationDiv);
+                    
+                    // Apply transform for next iteration (except on the last one)
+                    if (i < iterations) {
+                        currentData = applyArnoldTransform(currentData);
+                    }
+                    
+                }, i * 100); // Stagger generation by 100ms each
+            }
+        }
+        
+           function updateSize() {
+            currentSize = parseInt(document.getElementById('sizeSelect').value);
+            originalData = null;
+            clearGrid();
+            loadImage();
+        }
+
+          function clearGrid() {
+            document.getElementById('iterationsGrid').innerHTML = '';
+        }
+
+        
+        function loadImage() {
+            const img = new Image();
+            img.onload = function() {
+                loadImageData(img);
+            };
+
+            if (currentSize == 16) {
+                img.src = 'src/assets/16by16cat.png';
+            }
+            if (currentSize == 14) {
+                img.src = 'src/assets/14by14cat.png';
+            }
+            if (currentSize == 15) {
+                img.src = 'src/assets/15by15cat.png';
+            }
+    
+            if (currentSize == 161) {
+                img.src = 'src/assets/161pixelcat.png';
+            }
+    
+            console.log(currentSize)
+        }
+        
+        loadImage();
+    </script>
+</section>
+<section><h2>Why does the image come back?</h2>
+
+<!--Show image with the 16 by 16 cat coming back -->
+
+<aside class="notes">(1 min)</aside>
+</section>
+<section><style>
+  .grid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    width: fit-content;
+    font-size: 16px;
+  }
+
+  .cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: start;
+  }
+
+  .beamer-style-box {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ecdadd;
+  box-shadow: 5px 5px 5px grey;
+  border: solid thin;
+  font-size: 20px;
+  text-align: start;
+
+  .title {
+    font-size: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: maroon;
+    color: white;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+.beamer-box-content {
+    padding: 1rem;
+  }
+</style>
+
+<div class="beamer-style-box">
+  <div class="title">Theorem</div>
+  <div class="beamer-box-content">
+    The set of periodic points of a hyperbolic toral automorphism is given by
+    the set of points of the torus whose representative element has rational
+    coordinates.
+  </div>
+</div>
+
+<div class="grid-container">
+  <div class="grid">
+    <div class="cell">0,0</div>
+    <div class="cell">0,1</div>
+    <div class="cell">0,2</div>
+    <div class="cell">0,3</div>
+    <div class="cell">0,4</div>
+    <div class="cell">1,0</div>
+    <div class="cell">1,1</div>
+    <div class="cell">1,2</div>
+    <div class="cell">1,3</div>
+    <div class="cell">1,4</div>
+    <div class="cell">1,0</div>
+    <div class="cell">2,1</div>
+    <div class="cell">2,2</div>
+    <div class="cell">2,3</div>
+    <div class="cell">2,4</div>
+    <div class="cell">2,0</div>
+    <div class="cell">3,1</div>
+    <div class="cell">3,2</div>
+    <div class="cell">3,3</div>
+    <div class="cell">3,4</div>
+    <div class="cell">3,0</div>
+    <div class="cell">4,1</div>
+    <div class="cell">4,2</div>
+    <div class="cell">4,3</div>
+    <div class="cell">4,4</div>
+  </div>
+</div>
+<p>
+  Each pixel is periodic, therefore taking the lowest common multiple of all
+  finitely many pixels gives us the first time the images will come back.
+</p>
+
+<aside class="notes">
+  (2 min) The periodic points of the map occur on rational coordinates. The
+  image size consists of finitely many pixels. Each pixel occurs on a rational
+  coordinate. Therefore, each pixel is periodic. If we find the least common
+  multiple of all periods for all the pixels, that's when the image will come
+  back. Finding the period is very wacky, it is still an open problem to find a
+  closed form solution.
+</aside>
+</section>
+<section><h4>Go back to slide 16 </h4>
+
+<aside class="notes">
+  Now we know that the image will always come back.
+  The next question is does it always come back after 24 iterations?
+</aside>
+
+
+</section>
+<section><h2>When will the image come back?</h2></section>
+<section>Is there a pattern to when the image will come back?
+
+<style>
+  .graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div class="graph">
+  <img width="1500px" src="/src/assets/period_graph2.png" alt="period-graph" />
+</div>
+
+<aside class="notes">
+  Order them in a graph. Order them in a table. 
+  First thing to notice is that the distribution of periods is pretty wild! Assuming square image.
+</aside>
+</section>
+<section>Powers of two
+
+<style>
+  .graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div class="graph">
+  <img width="1500px" src="/src/assets/periodGraph2s.png" alt="period-graph" />
+</div>
+
+<aside class="notes">
+  Order them in a graph. Order them in a table. First thing to notice is that
+  the distribution of periods is pretty wild! Assuming square image.
+</aside>
+</section>
+<section>
+    <style>
+
+        .tables-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .table-wrapper {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .table-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+
+        td {
+            color: #333;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, auto);
+                gap: 15px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .table-wrapper {
+                padding: 15px;
+            }
+        }
+    </style>
+    <h3>Looking a little closer...</h3>
+    <div class="tables-container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pixel size (N) </th>
+                        <th>Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>3</tr>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>48</td>
+                    </tr>
+                    <tr>
+                        <td>64</td>
+                        <td>96</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pixel size (N) </th>
+                        <th>Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>8</tr>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>72</td>
+                    </tr>
+                    <tr>
+                        <td>81</td>
+                        <td>162</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+               <table>
+                <thead>
+                    <tr>
+                        <th>Pixel size (N) </th>
+                        <th>Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td>20</tr>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>100</td>
+                    </tr>
+
+                     <tr>
+                        <td>125</td>
+                        <td>500</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+           <table>
+                <thead>
+                    <tr>
+                        <th>Pixel size (N) </th>
+                        <th>Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7</td>
+                        <td>16</tr>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td>112</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section><div class="beamer-style-box">
+  <div class="title">Conjecture</div>
+  <div class="beamer-box-content">
+    Let $A$ be a Hyperbolic Toral Automorphism. Suppose $\Pi_A: \mathbb{N} \to
+    \mathbb{N}$ is a function that gives the period for a given pixel side
+    length. Let $p$ be a prime number. Then, <br />
+    $\Pi_A(p^n) = p^{n-1}N(p)$ for all $n \ge M$.  
+    <br/>
+    Where $M$ is an integer with $M \ge 0$.
+  </div>
+</div>
+
+
+
+<aside class="notes">
+  
+   new_x = (7*x + 11*y) % N
+   new_y = (5*x + 8*y) % N
+</aside>
+
+
+
+</section>
+<section>
+<div class="beamer-style-box">
+  <div class="title">Theorem</div>
+  <div class="beamer-box-content">
+    Let $A$ be a Hyperbolic Toral Automorphism. Let $N = p_1^{m_1} \ldots
+    p_n^{m_n}$ where $p_i$ is prime for all $1\le i \le n$. Then \[\Pi_A(N) =
+    \text{lcm}( \Pi_A(p_1^{m_1}), \ldots, \Pi_A(p_n^{m_n}))\]
+  </div>
+</div>
+</section>
+<section><h2>Reason 4: Inclusivity</h2>
+
+
+<aside class="notes">
+    (1 min)
+    Inclusitivity
+    Sharing can invite collaboration.
+    Collaboration can help you learn.
+    Your work could help someone else
+    At a highly technical conference it sparked a bit of wonder and made people who may not normally feel included, feel welcome. 
+    Sharing your perspective could help others share theirs.
+    Empowers through participation.
+    Turning passion into action.
+    Amie McNee
+    Re-adjust how people percieve things
+    https://www.youtube.com/watch?v=lEbOwCG321g&t=917s
+
+    Letting myself be vulnerable, but genuine.  
+
+</aside></section>
+<section><h4>Go back to slide 16</h4></section>
+<section><h2>Why do some of the images appear upside down?</h2>
+
+<aside class="notes">
+    
+</aside></section>
+<section><h2>Other patterns to explore</h2>
+
+</section>
+<section><aside class="notes">
+    Slide 300 for 500 pixels shows cool image.
+
+    Times where we get these Moire effects of some interference happening.
+    Other times where it just looks noisy.
+
+    Talk about the last three points!
+    1. Getting started
+    2. Freedom
+    3. curiosity
+
+</aside>
+<style>
+
+
+  .canvas-cat {
+    border: 1px solid #ccc;
+    image-rendering: pixelated;
+    width: 450px;
+    height: 450px;
+    max-width:450px;
+    max-height:450px;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  input[type="file"] {
+    margin: 10px;
+  }
+</style>
+
+<input type="file" id="imageInput" accept="image/*" />
+
+<select id="pictureSizeSelect" onchange="updateCanvasSize()">
+  <option value="14">14x14</option>
+  <option value="15">15x15</option>
+  <option value="16" selected>16x16</option>
+  <option value="161">161x161</option>
+  <option value="500">500x500</option>
+</select>
+<br /><br />
+
+<canvas class="canvas-cat" id="canvas-cat" width="16" height="16"></canvas>
+<br />
+
+<button onclick="toggleAnimation()">Animate</button>
+<button onclick="stepBack()">← Back</button>
+<button onclick="stepForward()">Forward →</button>
+<button onclick="reset()">Reset</button>
+
+<p>Iterations: <span id="count">0</span></p>
+
+<script>
+  const canvas = document.getElementById("canvas-cat");
+  const ctx = canvas.getContext("2d");
+  let originalData2 = null;
+  let currentData = null;
+  let iterations = 0;
+  let currentSize2 = 16;
+  let isAnimating = false;
+  let animationId = null;
+  let transformHistory = [];
+
+  document
+    .getElementById("imageInput")
+    .addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = new Image();
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0, currentSize2, currentSize2);
+          originalData2 = ctx.getImageData(0, 0, currentSize2, currentSize2);
+          currentData = ctx.getImageData(0, 0, currentSize2, currentSize2);
+          iterations = 0;
+          transformHistory = [
+            new ImageData(
+              new Uint8ClampedArray(currentData.data),
+              currentSize2,
+              currentSize2,
+            ),
+          ];
+          updateCount();
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+  function transform() {
+    if (!currentData) return;
+
+    const data = currentData.data;
+    const newData = new Uint8ClampedArray(data.length);
+
+    for (let y = 0; y < currentSize2; y++) {
+      for (let x = 0; x < currentSize2; x++) {
+        const newX = (x + y) % currentSize2;
+        const newY = (x + 0 * y) % currentSize2;
+
+        const oldIndex = (y * currentSize2 + x) * 4;
+        const newIndex = (newY * currentSize2 + newX) * 4;
+
+        for (let i = 0; i < 4; i++) {
+          newData[newIndex + i] = data[oldIndex + i];
+        }
+      }
+    }
+
+    currentData = new ImageData(newData, currentSize2, currentSize2);
+    ctx.putImageData(currentData, 0, 0);
+    iterations++;
+
+    transformHistory = transformHistory.slice(0, iterations);
+    transformHistory.push(
+      new ImageData(
+        new Uint8ClampedArray(currentData.data),
+        currentSize2,
+        currentSize2,
+      ),
+    );
+
+    updateCount();
+  }
+
+  function stepForward() {
+    if (transformHistory.length > iterations + 1) {
+      iterations++;
+      currentData = new ImageData(
+        new Uint8ClampedArray(transformHistory[iterations].data),
+        currentSize2,
+        currentSize2,
+      );
+      ctx.putImageData(currentData, 0, 0);
+      updateCount();
+    } else {
+      transform();
+    }
+  }
+
+  function stepBack() {
+    if (iterations > 0) {
+      iterations--;
+      currentData = new ImageData(
+        new Uint8ClampedArray(transformHistory[iterations].data),
+        currentSize2,
+        currentSize2,
+      );
+      ctx.putImageData(currentData, 0, 0);
+      updateCount();
+    }
+  }
+
+  function reset() {
+    if (originalData2) {
+      currentData = new ImageData(
+        new Uint8ClampedArray(originalData2.data),
+        currentSize2,
+        currentSize2,
+      );
+      ctx.putImageData(currentData, 0, 0);
+      iterations = 0;
+      transformHistory = [
+        new ImageData(
+          new Uint8ClampedArray(currentData.data),
+          currentSize2,
+          currentSize2,
+        ),
+      ];
+      updateCount();
+    }
+  }
+
+  function loadDefaultImage() {
+    const img = new Image();
+    img.onload = function () {
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, currentSize2, currentSize2);
+      ctx.drawImage(img, 0, 0, currentSize2, currentSize2);
+
+      originalData2 = ctx.getImageData(0, 0, currentSize2, currentSize2);
+      currentData = ctx.getImageData(0, 0, currentSize2, currentSize2);
+      iterations = 0;
+      transformHistory = [
+        new ImageData(
+          new Uint8ClampedArray(currentData.data),
+          currentSize2,
+          currentSize2,
+        ),
+      ];
+      updateCount();
+    };
+
+    if (currentSize2 == 14) {
+      img.src = "src/assets/14by14cat.png";
+    }
+
+    if (currentSize2 == 15) {
+      img.src = "src/assets/15by15cat.png";
+    }
+
+    if (currentSize2 == 16) {
+      img.src = "src/assets/16by16cat.png";
+    }
+
+    if (currentSize2 == 161) {
+      img.src = "src/assets/161pixelcat.png";
+    }
+
+    if (currentSize2 == 500) {
+      img.src = "src/assets/500pixelcat.png";
+    }
+
+    if (currentSize2 == 1024) {
+      img.src = "src/assets/1024pixelcat.png";
+    }
+  }
+
+  function updateCanvasSize() {
+    currentSize2 = parseInt(document.getElementById("pictureSizeSelect").value);
+    canvas.width = currentSize2;
+    canvas.height = currentSize2;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, currentSize2, currentSize2);
+
+    // Reset data
+    originalData2 = null;
+    currentData = null;
+    iterations = 0;
+    transformHistory = [];
+    updateCount();
+
+    // Stop animation if running
+    if (isAnimating) {
+      toggleAnimation();
+    }
+    console.log(currentSize);
+    loadDefaultImage();
+  }
+
+  function toggleAnimation() {
+    if (isAnimating) {
+      // Stop animation
+      isAnimating = false;
+      clearInterval(animationId);
+      document.querySelector(
+        'button[onclick="toggleAnimation()"]',
+      ).textContent = "Animate";
+    } else {
+      // Start animation
+      if (!currentData) return;
+
+      isAnimating = true;
+      document.querySelector(
+        'button[onclick="toggleAnimation()"]',
+      ).textContent = "Stop";
+
+      animationId = setInterval(() => {
+        stepForward();
+      }, 300); // Transform every 300ms
+    }
+  }
+
+  function updateCount() {
+    document.getElementById("count").textContent = iterations;
+  }
+
+  // Load checkerboard on start
+  loadDefaultImage();
+</script>
+
+<aside class="notes">(1 min) Need to get to 300.</aside>
+</section>
+<section><h2>Reason 5: First step allows for others to follow</h2>
+
+<!--Sharing allows others to start as well-->
+
+<aside class="notes">
+  (2 min) Allows you refine the approach. 
+  Fix your code.
+  Allows you to make it better. 
+  Try a different Hyperbolic Toral Automorphism.
+  Or to extend it to different dimentions even!
+</aside>
+</section>
+<section></section>
+<section><h2>Thank you!</h2>
+
+
+<aside class="notes">
+    (1 min)
+    Shhh, these are your private notes 📝
+</aside></section>
+<section><h3>Citations</h3>
+<a href="https://www.youtube.com/watch?v=lEbOwCG321g&t=975s">
+  3d printed case- MyBritishComputerGuy
+</a>
+</section>
+				</div>
 			</div>
 		</div>
 
@@ -25,15 +2096,17 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				slideNumber:true,
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 			});
 		</script>
 	</body>

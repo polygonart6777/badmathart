@@ -1,0 +1,139 @@
+
+<aside class="notes">
+  In 2019, I presented my thesis work here at ICERM.
+  
+  My work dealt with modelling
+  complex systems called Hyperbolic Toral Automorphisms which I will define soon.
+  The matrix here is used to define one of those Hyperbolic Toral Automorphisms,
+
+  The interesting part for me was that tiling spaces could be used to model Hyperbolic Toral Automorphisms.
+  
+  This tiling is called the Rauzy tiling.  
+
+  A lot of people like to model the Penrose tilings, or now the famous monotilings, but Back
+  in 2019 I loved making things out of the Rauzy tilings.  I made necklaces, coasters, puzzles etc. 
+  I was ready to get it tatooed.  You name it.
+
+</aside>
+
+<style>
+  .image-grid {
+    display: grid;
+    gap: 15px;
+  }
+
+  .bottom-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1, 225px);
+  }
+
+  .top-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(1, 225px);
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .image-container:hover {
+    transform: scale(1.02);
+  }
+
+  .image-overlay-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover .image-overlay {
+    transform: translateY(0);
+  }
+
+  .image-title-2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .image-description-2 {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .image-item-2:last-child {
+    grid-column: 1;
+  }
+
+  .map {
+    font-size:20px;
+  }
+</style>
+
+<h2>Rauzy fractal</h2>
+
+<div class="map">Take $A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$, the Tribonacci Matrix </div>
+
+
+<div class="image-grid top-row">
+  <div class="image-container">
+    <img src="/src/assets/rauzysub1.png" alt="Image 3" />
+    <div class="image-overlay-2">
+      <div class="image-title-2">Substitution 1</div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <img src="/src/assets/rauzysub2.png" alt="Image 3" />
+    <div class="image-overlay-2">
+      <div class="image-title-2">Substitution 2</div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <img src="/src/assets/rauzysub3.png" alt="Image 3" />
+    <div class="image-overlay-2">
+      <div class="image-title-2">Substitution 3</div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+</div>
+
+<div class="image-grid bottom-row">
+  <div class="image-container">
+    <!-- teresa and I building one of George Hart's sculptures, or me with all my origami?-->
+    <img src="/src/assets/rauzy-projection.jpg" alt="rauzy-projection" />
+    <div class="image-overlay-2">
+      <div class="image-title-2"></div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <!--A picture of one of my slides?-->
+    <img src="/src/assets/rauzytiling.png" alt="rauzy-tiling" />
+    <div class="image-overlay-2">
+      <div class="image-title-2"></div>
+      <div class="image-description-2"></div>
+    </div>
+  </div>
+</div>
