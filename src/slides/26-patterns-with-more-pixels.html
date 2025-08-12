@@ -11,8 +11,9 @@
 
 </aside>
 <style>
-
-
+  .canvas-cat-container {
+    padding-top:20px;
+  }
   .canvas-cat {
     border: 1px solid #ccc;
     image-rendering: pixelated;
@@ -33,26 +34,51 @@
   }
 </style>
 
-<input type="file" id="imageInput" accept="image/*" />
+ <div class="image-controls">
 
-<select id="pictureSizeSelect" onchange="updateCanvasSize()">
-  <option value="14">14x14</option>
-  <option value="15">15x15</option>
-  <option value="16" selected>16x16</option>
-  <option value="161">161x161</option>
-  <option value="500">500x500</option>
-</select>
-<br /><br />
+    <div class="matrices-wrapper">
+      <p>Iterations: <span id="count">0</span></p>
+      <div class="add-file">
+        <input type="file" id="imageInput" accept="image/*" />
+      </div>
+      <div class="matrix-label">$A=$</div>
+      <div class="matrix">
+        <div class="matrix-cell">
+          <label class="matrix-label">a₁₁</label>
+          <input id="a11-full" value="1" />
+        </div>
+        <div class="matrix-cell">
+          <label class="matrix-label">a₁₂</label>
+          <input id="a12-full" value="1" />
+        </div>
+        <div class="matrix-cell">
+          <label class="matrix-label">a₂₁</label>
+          <input id="a21-full" value="1" />
+        </div>
+        <div class="matrix-cell">
+          <label class="matrix-label">a₂₂</label>
+          <input id="a22-full" value="0" />
+        </div>
+      </div>
 
+      <select id="sizeSelect" onchange="updateSize()">
+        <option value="14">14x14</option>
+        <option value="15">15x15</option>
+        <option value="16" selected>16x16</option>
+        <option value="161">161x161</option>
+      </select>
+
+    </div>
+    </div>
+<div class="canvas-cat-container">
 <canvas class="canvas-cat" id="canvas-cat" width="16" height="16"></canvas>
-<br />
+</div>
 
 <button onclick="toggleAnimation()">Animate</button>
 <button onclick="stepBack()">← Back</button>
 <button onclick="stepForward()">Forward →</button>
 <button onclick="reset()">Reset</button>
 
-<p>Iterations: <span id="count">0</span></p>
 
 <script>
   const canvas = document.getElementById("canvas-cat");
@@ -96,13 +122,18 @@
   function transform() {
     if (!currentData) return;
 
+    const a11 = parseInt(document.getElementById("a11-full").value);
+    const a12 = parseInt(document.getElementById("a12-full").value);
+    const a21 = parseInt(document.getElementById("a21-full").value);
+    const a22 = parseInt(document.getElementById("a22-full").value);
+
     const data = currentData.data;
     const newData = new Uint8ClampedArray(data.length);
 
     for (let y = 0; y < currentSize2; y++) {
       for (let x = 0; x < currentSize2; x++) {
-        const newX = (x + y) % currentSize2;
-        const newY = (x + 0 * y) % currentSize2;
+        const newX = (a11*x + a12*y) % currentSize2;
+        const newY = (a21*x + a22*y) % currentSize2;
 
         const oldIndex = (y * currentSize2 + x) * 4;
         const newIndex = (newY * currentSize2 + newX) * 4;
@@ -229,14 +260,12 @@
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, currentSize2, currentSize2);
 
-    // Reset data
     originalData2 = null;
     currentData = null;
     iterations = 0;
     transformHistory = [];
     updateCount();
 
-    // Stop animation if running
     if (isAnimating) {
       toggleAnimation();
     }
@@ -246,14 +275,12 @@
 
   function toggleAnimation() {
     if (isAnimating) {
-      // Stop animation
       isAnimating = false;
       clearInterval(animationId);
       document.querySelector(
         'button[onclick="toggleAnimation()"]',
       ).textContent = "Animate";
     } else {
-      // Start animation
       if (!currentData) return;
 
       isAnimating = true;
@@ -271,7 +298,6 @@
     document.getElementById("count").textContent = iterations;
   }
 
-  // Load checkerboard on start
   loadDefaultImage();
 </script>
 
