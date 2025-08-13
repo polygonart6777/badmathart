@@ -7,7 +7,7 @@
 
 <style>
   .layout-images {
-    margin-top: -300px;
+    margin-top: -280px;
   }
 
   .image-controls {
@@ -29,15 +29,10 @@
     margin: 10px;
   }
 
-  select {
-    padding: 5px;
-    margin: 5px;
-  }
-
   .iterations-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 8px;
+    gap: 5px;
     width: 1200px;
     margin-left: -120px;
     padding-top: 20px;
@@ -46,7 +41,7 @@
   .iteration-item {
     text-align: center;
     background: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -54,8 +49,8 @@
   .iteration-item canvas {
     border: 1px solid #ccc;
     image-rendering: pixelated;
-    width: 80px;
-    height: 80px;
+    width: 82px;
+    height: 82px;
   }
 
   .iteration-item h4 {
@@ -77,14 +72,14 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
   }
 
   .matrix {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 10px;
+    gap: 5px;
+    padding: 5px;
     background: #fafafa;
     position: relative;
   }
@@ -99,7 +94,7 @@
   }
 
   .matrix-label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #555;
     min-width: 40px;
@@ -109,11 +104,15 @@
   input {
     width: 60px;
     background: white;
-    border: 1px solid #ccc;
+    border: 2px solid #e1e5e9;
+    padding: 12px 5px 12px 5px;
     border-radius: 4px;
     color: #333;
     font-size: 14px;
+    border-radius: 8px;
     text-align: center;
+    border: 2px solid #e1e5e9;
+
     transition: border-color 0.2s ease;
   }
 
@@ -125,6 +124,16 @@
       width: 100%;
     }
   }
+
+ select {
+    background: white;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 12px 0px 12px 0px;
+    font-size: 16px;
+    min-width: 120px;
+  }
+
 </style>
 <section class="layout-images">
   <div class="image-controls">
@@ -153,12 +162,14 @@
         </div>
       </div>
 
-      <select id="sizeSelect" onchange="updateSize()">
-        <option value="14">14x14</option>
-        <option value="15">15x15</option>
-        <option value="16" selected>16x16</option>
-        <option value="161">161x161</option>
-      </select>
+      <div class="select-dropdown">
+        <select  id="sizeSelect" onchange="updateSize()">
+          <option value="14">14x14</option>
+          <option value="15">15x15</option>
+          <option value="16" selected>16x16</option>
+          <option value="161">161x161</option>
+        </select>
+      </div>
 
       <button onclick="generateAllIterations()">Show All Iterations</button>
     </div>

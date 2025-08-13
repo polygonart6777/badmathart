@@ -1,0 +1,26 @@
+<div class="beamer-style-box">
+  <div class="title">Theorem</div>
+  <div class="beamer-box-content">
+    Let $N$ be in $\mathbb{N}$ denote the pixel sidelength of an image and $A$ in $M_2(\mathbb{Z_N})$.  If $A$ is such that $gcd(det(A), N) = 1$, then $A^k = I$ for some $k \in \mathbb{Z}$. <br> Hence, the image will appear after $k$ iterations of the map A.
+  </div>
+</div>
+
+<p>
+Proof.
+<br/>
+If $gcd(det(A),N) = 1$ then $det(A)$ is invertible in $\mathbb{Z}_N$.
+<br/>
+Therefore we may take $A^{-1} = det(A)^{-1} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$ mod $N$.
+<br/>
+And so, $A$ is an invertible matrix in $M_2(\mathbb{Z_N})$, that is $A$ is in $GL(2, \mathbb{Z}_N)$.
+<br/>
+There are $N^4$ different possible matrices in $M_2(\mathbb{Z_N})$.
+<br/>
+If we apply $A$ to itself, $N^4+1$ times, two of them must be the same.
+<br/>
+Suppose $A^i = A^j$ and that $i &ltj$.
+<br/>
+Then $A^{j-i}  = I$.  
+Therefore the picture will have reappeared after $j-i$ iterations.
+</p>
+

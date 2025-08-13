@@ -35,7 +35,7 @@
             text-align: center;
         }
         button {
-            background: #4CAF50;
+            background:#3c7cec;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -43,14 +43,12 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: transform 0.15s ease-in-out;
         }
         button:hover {
-            background: #45a049;
+            transform: scale(1.03);
         }
-        button:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-        }
+
         .iteration-counter {
             font-size: 20px;
             font-weight: bold;
@@ -65,7 +63,7 @@
 
     </style>
 </head>
-<h3>Discrete Arnold Cat Map</h3>
+<h3>Discrete HTA Example</h3>
 <p class="hta-matrix">Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$</p>
 
         <div class="canvas-container">
