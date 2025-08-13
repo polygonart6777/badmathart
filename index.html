@@ -221,6 +221,13 @@
 </section>
 <section><h3> Motivation </h3>
 
+<video
+  width="600"
+  controls
+  src="src/assets/rauzy.mp4"
+></video>
+
+
 
 <aside class="notes">
     Because this was part reunion, I wanted to try to create a project that was somewhat related to the work I presented before.
@@ -632,7 +639,6 @@ $\lambda_1 = \frac{1+\sqrt{5}}{2}$ and $\lambda_2 = \frac{1-\sqrt{5}}{2}$
 
 <aside class="notes">
   (2 min) 
-  Wanted to keep the leds, and microcontroller aspect of it. 
   But wanted to add a bit of math.
   I promised you a definition of Hyperbolic Toral Automorphisms.
   My thesis dealt with Hyperbolic Toral Automorphisms, and thought it would be cool to use them within this piece.
@@ -641,19 +647,6 @@ $\lambda_1 = \frac{1+\sqrt{5}}{2}$ and $\lambda_2 = \frac{1-\sqrt{5}}{2}$
   Stretches in one direction while it compresses in another.
 </aside>
 </section>
-<section><h2>Discrete HTA </h2>
-Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$
-
-<br />
-<br />
-Let N be a natural number. Define 
-\[ g_A : \mathbb{Z}^2_N \to \mathbb{Z}^2_N \, \text{ as } \, g_A({[x]}_N)
-= {[Ax}]_N \text{ with } x \text{ in } \mathbb{Z}^2 \] 
-
-<aside class="notes">
-    Since I was going to be working by a 16 by 16 set of leds,
-    I thought, "Why not look into what happens for the Arnold Cat Map for the discrete case instead"
-</aside></section>
 <section><aside class="notes">
     (2 min)
     We will take an N by N image, in this case 10 by 10.
@@ -664,7 +657,6 @@ Let N be a natural number. Define
 </aside>
 
 <head>
-    <title>Arnold Cat Map - Discrete 10×10 Grid</title>
     <style>
 
   
@@ -719,7 +711,7 @@ Let N be a natural number. Define
 
     </style>
 </head>
-<h3>Discrete HTA Example</h3>
+<h3>HTA Example</h3>
 <p class="hta-matrix">Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$</p>
 
         <div class="canvas-container">
@@ -1006,6 +998,19 @@ Let N be a natural number. Define
         redraw();
     </script>
 </section>
+<section><h2>Discrete HTA </h2>
+Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$
+
+<br />
+<br />
+Let N be a natural number. Define 
+\[ g_A : \mathbb{Z}^2_N \to \mathbb{Z}^2_N \, \text{ as } \, g_A({[x]}_N)
+= {[Ax}]_N \text{ with } x \text{ in } \mathbb{Z}^2 \] 
+
+<aside class="notes">
+    Since I was going to be working by a 16 by 16 set of leds,
+    I thought, "Why not look into what happens for the Arnold Cat Map for the discrete case instead"
+</aside></section>
 <section><h2>Patterns within encrypted images</h2>
 
 <aside class="notes">
@@ -1667,8 +1672,6 @@ Therefore the picture will have reappeared after $j-i$ iterations.
   </div>
 </div>
 
-Proof.
-
 
 </section>
 <section><h2>Reason 4: Inclusivity</h2>
@@ -2010,7 +2013,11 @@ Proof.
   Or to extend it to different dimentions even!
 </aside>
 </section>
-<section></section>
+<section><div class="map">Take $A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$, the Tribonacci Matrix </div>
+
+<div class="image-item">
+    <img src="src/assets/rauzycube.png" alt="rauzy cube" />
+  </div></section>
 <section><h2>Thank you!</h2>
 
 
@@ -2116,6 +2123,9 @@ Proof.
   </div>
 </div> -->
 <p>
+  Proof. 
+  <br/> 
+  Suppose $\left[\bf{v}\right]$ is an element whose representative has rational coordinates.
   Each pixel is periodic, therefore taking the lowest common multiple of all
   finitely many pixels gives us the first time the images will come back.
 </p>

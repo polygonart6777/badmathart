@@ -1,0 +1,350 @@
+<aside class="notes">
+    (2 min)
+    We will take an N by N image, in this case 10 by 10.
+    Apply the linear matrix to it.  The matrix has an eigenvalue less than 1 and another that greater than 1 in absolute value.
+    So it stretches in the direction of one eigenvector and compresses in the direction of the other.
+    Applying the modulus puts everything back into the starting square.
+
+</aside>
+
+<head>
+    <style>
+
+  
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+        }
+        .canvas-wrapper {
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        canvas {
+            border: 2px solid #333;
+            border-radius: 5px;
+            background: white;
+            max-width:280px;
+            max-height:280px;
+        }
+        .hta-controls {
+            text-align: center;
+        }
+        button {
+            background:#3c7cec;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.15s ease-in-out;
+        }
+        button:hover {
+            transform: scale(1.03);
+        }
+
+        .iteration-counter {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .hta-matrix {
+            font-size: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<h3>HTA Example</h3>
+<p class="hta-matrix">Let $A = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$</p>
+
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <div class="iteration-counter">Iteration: <span id="iterationCount">0</span></div>
+                <canvas id="beforeCanvas" width="280" height="280"></canvas>
+            </div>
+            <div class="fragment canvas-wrapper" >
+                <div class="iteration-counter">Linear Map </div>
+
+                <canvas id="linearCanvas" width="280" height="280"></canvas>
+            </div>
+            <div class="fragment canvas-wrapper">
+                <div class="iteration-counter">Discrete Cat Map </div>
+                <canvas id="finalCanvas" width="280" height="280"></canvas>
+            </div>
+        </div>
+
+          <div class="hta-controls">
+            <button onclick="applyTransform()">Apply Transform</button>
+            <button onclick="resetTransform()">Reset</button>
+        </div>
+        
+     
+    <script>
+        const beforeCanvas = document.getElementById('beforeCanvas');
+        const linearCanvas = document.getElementById('linearCanvas');
+        const finalCanvas = document.getElementById('finalCanvas');
+        const beforeCtx = beforeCanvas.getContext('2d');
+        const linearCtx = linearCanvas.getContext('2d');
+        const finalCtx = finalCanvas.getContext('2d');
+        
+        const gridSize = 10;
+        let originalPoints = [];
+        let currentPoints = [];
+        let iteration = 0
+        
+        // For linear canvas, show extended range
+        const linearMin = -5;
+        const linearMax = 20;
+        const linearRange = linearMax - linearMin;
+        
+        // Generate distinct colors for each grid point
+            function generateColors() {
+            const colors = [];
+            
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    // Create a smooth spectrum across the grid
+                    // Use position to determine hue and saturation
+                    
+                    const baseHue = 510 + (j * 50) / gridSize + (j * 105) / gridSize;
+                    const hue = baseHue % 360;
+
+                    saturation = 60
+                    
+                    // Lightness varies from top to bottom (40% to 70%)
+                    const lightness = 50
+                    
+                    colors.push(`hsl(${hue % 360}, ${saturation}%, ${lightness}%)`);
+                }
+            }
+            
+            return colors;
+        }
+        
+        // Initialize grid points (discrete coordinates 0-9)
+        function initializeGrid() {
+            originalPoints = [];
+            currentPoints = [];
+            
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    originalPoints.push({x: i, y: j, originalIndex: i * gridSize + j});
+                    currentPoints.push({x: i, y: j, originalIndex: i * gridSize + j});
+                }
+            }
+        }
+        
+        // Linear transformation (before modulus)
+        function linearTransform(x, y) {
+            const newX =  x + y;
+            const newY = x + 0*y;
+            return [newX, newY];
+        }
+        
+        // Discrete Arnold Cat Map (mod 10)
+        function discreteArnoldCatMap(x, y) {
+            const [linearX, linearY] = linearTransform(x, y);
+            const newX = ((linearX % gridSize) + gridSize) % gridSize; 
+            const newY = ((linearY % gridSize) + gridSize) % gridSize;
+            return [newX, newY];
+        }
+        
+        // Convert coordinates to canvas position
+        function gridToCanvas(x, y, canvas, isLinear = false) {
+            if (isLinear) {
+                // For linear canvas, show extended range
+                const canvasX = ((x - linearMin) / linearRange) * canvas.width;
+                const canvasY = canvas.height - ((y - linearMin) / linearRange) * canvas.height;
+                return [canvasX, canvasY];
+            } else {
+                // For discrete grid, use cell centers
+                const cellSize = canvas.width / gridSize;
+                const canvasX = (x + 0.5) * cellSize;
+                const canvasY = canvas.height - (y + 0.5) * cellSize;
+                return [canvasX, canvasY];
+            }
+        }
+        
+        // Draw grid lines
+        function drawGrid(ctx, canvas, isLinear = false) {
+            ctx.strokeStyle = '#ddd';
+            ctx.lineWidth = 1;
+            
+            if (isLinear) {
+                // Draw grid lines for extended range
+                for (let i = Math.ceil(linearMin); i <= Math.floor(linearMax); i += 5) {
+                    const [x, _] = gridToCanvas(i, 0, canvas, true);
+                    if (x >= 0 && x <= canvas.width) {
+                        ctx.beginPath();
+                        ctx.moveTo(x, 0);
+                        ctx.lineTo(x, canvas.height);
+                        ctx.stroke();
+                    }
+                }
+                
+                for (let j = Math.ceil(linearMin); j <= Math.floor(linearMax); j += 5) {
+                    const [_, y] = gridToCanvas(0, j, canvas, true);
+                    if (y >= 0 && y <= canvas.height) {
+                        ctx.beginPath();
+                        ctx.moveTo(0, y);
+                        ctx.lineTo(canvas.width, y);
+                        ctx.stroke();
+                    }
+                }
+                
+                // Highlight the 10×10 region
+                ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
+                const [x0, y1] = gridToCanvas(0, 0, canvas, true);
+                const [x1, y0] = gridToCanvas(gridSize, gridSize, canvas, true);
+                if (x0 >= 0 && x1 <= canvas.width && y0 >= 0 && y1 <= canvas.height) {
+                    ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
+                }
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x0, y0, x1 - x0, y1 - y0);
+            } else {
+                // Draw 10×10 grid
+                const cellSize = canvas.width / gridSize;
+                
+                for (let i = 0; i <= gridSize; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(i * cellSize, 0);
+                    ctx.lineTo(i * cellSize, canvas.height);
+                    ctx.stroke();
+                }
+                
+                for (let j = 0; j <= gridSize; j++) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, j * cellSize);
+                    ctx.lineTo(canvas.width, j * cellSize);
+                    ctx.stroke();
+                }
+                
+                // Highlight grid area
+                ctx.fillStyle = 'rgba(0, 150, 0, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+        
+        // Draw colored squares
+        function drawPoints(ctx, canvas, points, showLinear = false) {
+            const colors = generateColors();
+            
+            if (showLinear) {
+                // For linear transformation, draw as colored squares at transformed positions
+                for (let i = 0; i < points.length; i++) {
+                    const point = points[i];
+                    let [x, y] = linearTransform(point.x, point.y);
+                    
+                    const [canvasX, canvasY] = gridToCanvas(x, y, canvas, true);
+                    
+                    // Only draw if point is visible
+                    if (canvasX >= -gridSize && canvasX <= canvas.width + gridSize && 
+                        canvasY >= -gridSize && canvasY <= canvas.height + gridSize) {
+                        
+                        const squareSize = 12; // Size of squares in linear view
+                        
+                        // Use the originalIndex to ensure consistent coloring
+                        ctx.fillStyle = colors[point.originalIndex];
+                        ctx.fillRect(canvasX - squareSize/2, canvasY - squareSize/2, squareSize, squareSize);
+                        
+                        // Add border for visibility
+                        ctx.strokeStyle = '#000';
+                        ctx.lineWidth = 1;
+                        ctx.strokeRect(canvasX - squareSize/2, canvasY - squareSize/2, squareSize, squareSize);
+                        
+                    }
+                }
+            } else {
+                // For discrete grids, draw as colored squares filling grid cells
+                const cellSize = canvas.width / gridSize;
+                
+                for (let i = 0; i < points.length; i++) {
+                    const point = points[i];
+                    const x = point.x;
+                    const y = point.y;
+                    
+                    // Calculate cell position
+                    const cellX = x * cellSize;
+                    const cellY = (gridSize - 1 - y) * cellSize; // Flip Y coordinate
+                    
+                    // Fill the entire cell with the color
+                    ctx.fillStyle = colors[point.originalIndex];
+                    ctx.fillRect(cellX, cellY, cellSize, cellSize);
+                    
+                    // Add black border around each cell
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(cellX, cellY, cellSize, cellSize);
+                }
+            }
+        }
+        
+        // Redraw all canvases
+        function redraw() {
+            // Clear canvases
+            beforeCtx.clearRect(0, 0, beforeCanvas.width, beforeCanvas.height);
+            linearCtx.clearRect(0, 0, linearCanvas.width, linearCanvas.height);
+            finalCtx.clearRect(0, 0, finalCanvas.width, finalCanvas.height);
+            
+            // Draw grids
+            drawGrid(beforeCtx, beforeCanvas, false);
+            drawGrid(linearCtx, linearCanvas, true);
+            drawGrid(finalCtx, finalCanvas, false);
+            
+            // Show the transformation sequence correctly:
+            drawPoints(beforeCtx, beforeCanvas, currentPoints, false);  // Current positions (before next transform)
+            drawPoints(linearCtx, linearCanvas, currentPoints, true);   // Linear transform of current positions (before mod)
+            
+            // Apply one step transformation to show what the final result will be
+            const nextPoints = [];
+            for (let i = 0; i < currentPoints.length; i++) {
+                const point = currentPoints[i];
+                const [newX, newY] = discreteArnoldCatMap(point.x, point.y);
+                nextPoints.push({x: newX, y: newY, originalIndex: point.originalIndex});
+            }
+            drawPoints(finalCtx, finalCanvas, nextPoints, false);       // Show result after mod (next state)
+        }
+        
+        function applyTransform() {
+            
+            // Apply discrete Arnold Cat Map to each point
+            for (let i = 0; i < currentPoints.length; i++) {
+                const point = currentPoints[i];
+                const [newX, newY] = discreteArnoldCatMap(point.x, point.y);
+                point.x = newX;
+                point.y = newY;
+            }
+            
+            iteration++;
+            document.getElementById('iterationCount').textContent = iteration;
+            redraw();
+        }
+        
+        function resetTransform() {
+            console.log('check')
+            // Reset points to original positions
+            for (let i = 0; i < currentPoints.length; i++) {
+                currentPoints[i].x = originalPoints[i].x;
+                currentPoints[i].y = originalPoints[i].y;
+            }
+            console.log('reset')
+            
+            iteration = 0;
+            document.getElementById('iterationCount').textContent = iteration;
+            redraw();
+        }
+        
+        
+        // Initialize
+        initializeGrid();
+        redraw();
+    </script>
