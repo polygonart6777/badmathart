@@ -31,7 +31,7 @@
   <div class="matrices-wrapper">
     <p>Iterations: <span id="count">0</span></p>
     <div class="add-file">
-      <input type="file" id="imageInput" accept="image/*" />
+      <input type="file" id="imageInputSingle" accept="image/*" />
     </div>
     <div class="matrix-label">$A=$</div>
     <div class="matrix">
@@ -84,7 +84,7 @@
   let transformHistory = [];
 
   document
-    .getElementById("imageInput")
+    .getElementById("imageInputSingle")
     .addEventListener("change", function (e) {
       const file = e.target.files[0];
       if (!file) return;
