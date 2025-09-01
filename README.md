@@ -1,30 +1,22 @@
-<p align="center">
-  <a href="https://revealjs.com">
-  <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
-  </a>
-  <br><br>
-  <a href="https://github.com/hakimel/reveal.js/actions"><img src="https://github.com/hakimel/reveal.js/workflows/tests/badge.svg"></a>
-  <a href="https://slides.com/"><img src="https://static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
+<h1> Five Reasons to Create 'bad' mathart </h1>
+
+![alt text](<pres-screenshot.png>)
+
+<strong>Abstract:</strong> 
+<p>
+ Mathematics is enriched when coupled with acts of making that enable ideas to be looked at from multiple angles. In this talk, I will advocate for the significance of making as a mode of mathematical inquiry, not necessarily to produce polished handicraft but because the attempt itself deepens understanding and fosters new insights. I will illustrate this point through an example from my own practice: implementing the Arnold Cat Map, a classic area preserving automorphism of the torus, on an ESP32 micro-controller to encrypt an image on a 16-by-16 addressable led screen. The process of using hyperbolic measure preserving transformations for image encryption piqued my interest and opened the door for lots of interesting questions. Through this example, I will argue that making, regardless of its final form, can be a worthwhile mathematical endeavor. It allows ideas to be encountered in new ways, encourages a willingness to experiment and to fail, and ultimately deepens mathematical thinking and discovery.
 </p>
 
-reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free. Check out the live demo at [revealjs.com](https://revealjs.com/).
+<p align="center">
+  <img src="led-cat.jpg" width="200">
+  <img src="led-mixed-cat.jpg" width="200">
+</p>
 
-The framework comes with a powerful feature set including [nested slides](https://revealjs.com/vertical-slides/), [Markdown support](https://revealjs.com/markdown/), [Auto-Animate](https://revealjs.com/auto-animate/), [PDF export](https://revealjs.com/pdf-export/), [speaker notes](https://revealjs.com/speaker-view/), [LaTeX typesetting](https://revealjs.com/math/), [syntax highlighted code](https://revealjs.com/code/) and an [extensive API](https://revealjs.com/api/).
+View the presentation slides at <a>https://polygonart6777.github.io/badmathart/ </a>
 
----
+Note: Using the 'S' key will show the speaker notes.  Using the 'G' key will allow you to go to a particular slide.
 
-Want to create reveal.js presentation in a graphical editor? Try <https://slides.com>. It's made by the same people behind reveal.js.
 
----
 
-### Getting started
-- 🚀 [Install reveal.js](https://revealjs.com/installation)
-- 👀 [View the demo presentation](https://revealjs.com/demo)
-- 📖 [Read the documentation](https://revealjs.com/markup/)
-- 🖌 [Try the visual editor for reveal.js at Slides.com](https://slides.com/)
-- 🎬 [Watch the reveal.js video course (paid)](https://revealjs.com/course)
+This presentation was built with reveal.js, an open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free. Check out the live demo at [revealjs.com](https://revealjs.com/).
 
---- 
-<div align="center">
-  MIT licensed | Copyright © 2011-2024 Hakim El Hattab, https://hakim.se
-</div>
