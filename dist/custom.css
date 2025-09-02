@@ -55,23 +55,6 @@
   top: -2px;
 }
 
-.beamer-style-box {
-  width: 100%;
-  border-radius: 10px;
-  background-color: #ecdadd;
-  box-shadow: 5px 5px 5px grey;
-  border: solid thin;
-  font-size: 20px;
-  text-align: start;
-
-  .title {
-    font-size: 30px;
-    border-radius: 10px 10px 0 0;
-    background-color: maroon;
-    color: white;
-    padding: 0 1rem 0 1rem;
-  }
-}
 
 .beamer-box-content {
     padding: 1rem;

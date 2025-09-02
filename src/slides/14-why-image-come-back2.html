@@ -1,11 +1,36 @@
+<style>.beamer-style-box {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ecdadd;
+  box-shadow: 5px 5px 5px grey;
+  border: solid thin;
+  font-size: 20px;
+  text-align: start;
+
+  .title {
+    font-size: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: maroon;
+    color: white;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+.proof-content {
+  font-size:20px;
+  text-align: start;
+}
+
+</style>
+
 <div class="beamer-style-box">
   <div class="title">Theorem</div>
   <div class="beamer-box-content">
-    Let $N$ be in $\mathbb{N}$ denote the pixel sidelength of an image and $A$ in $M_2(\mathbb{Z_N})$.  If $A$ is such that $gcd(det(A), N) = 1$, then $A^k = I$ for some $k \in \mathbb{Z}$. <br> Hence, the image will appear after $k$ iterations of the map A.
+    Let $N$ be in $\mathbb{N}$ denote the pixel sidelength of an image and $A$ in $M_2(\mathbb{Z_N})$.  <br/> If $A$ is such that $gcd(det(A), N) = 1$, then $A^k = I$ for some $k \in \mathbb{Z}$. <br> Hence, the image will appear after $k$ iterations of the map A.
   </div>
 </div>
 
-<p>
+<p class="proof-content">
 Proof.
 <br/>
 If $gcd(det(A),N) = 1$ then $det(A)$ is invertible in $\mathbb{Z}_N$.
