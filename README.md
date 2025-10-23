@@ -14,6 +14,8 @@
 
 View the presentation slides at <a>https://polygonart6777.github.io/badmathart/ </a>
 
+Watch the presentation at <a>https://icerm.brown.edu/video_archive/4311 </a>
+
 Note: Using the 'S' key will show the speaker notes.  Using the 'G' key will allow you to go to a particular slide.
 
 
